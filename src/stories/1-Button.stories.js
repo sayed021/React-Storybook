@@ -4,11 +4,18 @@ import Button from '../Component/Atoms/Button/Button';
 // import { Button } from '@storybook/react/demo';
 import { withKnobs, text, boolean, number } from "@storybook/addon-knobs";
 import { jsxDecorator } from 'storybook-addon-jsx';
+import { withInfo } from '@storybook/addon-info';
 
 export default {
   title: 'Button',
   component: Button,
-  decorators: [withKnobs, jsxDecorator],
+  decorators: [withKnobs, jsxDecorator, withInfo],
+  parameters: {
+    backgrounds: [
+      { name: 'twitter', value: '#00aced', default: true },
+      { name: 'facebook', value: '#3b5998' },
+    ]
+  },
 };
 
 export const LinkButton = () => <Button
